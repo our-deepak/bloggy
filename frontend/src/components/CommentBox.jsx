@@ -53,7 +53,7 @@ const CommentBox = ({ selectedBlog }) => {
     useEffect(() => {
         const getAllCommentsOfBlog = async () => {
             try {
-                const res = await axios.get(`http://localhost:8000/api/v1/comment/${selectedBlog._id}/comment/all`)
+                const res = await axios.get(`https://bloggy-wx90.onrender.com/api/v1/comment/${selectedBlog._id}/comment/all`)
                 const data = res.data.comments
                 dispatch(setComment(data))
             } catch (error) {
@@ -66,7 +66,7 @@ const CommentBox = ({ selectedBlog }) => {
 
     const commentHandler = async () => {
         try {
-            const res = await axios.post(`http://localhost:8000/api/v1/comment/${selectedBlog._id}/create`, { content }, {
+            const res = await axios.post(`https://bloggy-wx90.onrender.com/api/v1/comment/${selectedBlog._id}/create`, { content }, {
                 headers: {
                     "Content-Type": "application/json"
                 },
@@ -119,7 +119,7 @@ const CommentBox = ({ selectedBlog }) => {
     const editCommentHandler = async (commentId) => {
         try {
             const res = await axios.put(
-                `http://localhost:8000/api/v1/comment/${commentId}/edit`,
+                `https://bloggy-wx90.onrender.com/api/v1/comment/${commentId}/edit`,
                 { content: editedContent },
                 {
                     withCredentials: true,
@@ -147,7 +147,7 @@ const CommentBox = ({ selectedBlog }) => {
      const likeCommentHandler = async (commentId) => {
          try {
              const res = await axios.get(
-                 `http://localhost:8000/api/v1/comment/${commentId}/like`,
+                 `https://bloggy-wx90.onrender.com/api/v1/comment/${commentId}/like`,
                  {
                      withCredentials: true,
                  }
