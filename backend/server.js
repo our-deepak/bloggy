@@ -17,7 +17,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 const allowedOrigins = [
-  "http://localhost:5173",
   "https://blog-buddy-deepak.vercel.app"
 ];
 
